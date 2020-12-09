@@ -1,0 +1,3 @@
+Basic command script that does logout current rdp session, and does login user to local session.
+
+Can be usefull when certain applications require direct x or such...
