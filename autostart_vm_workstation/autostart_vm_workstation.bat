@@ -1,0 +1,1 @@
+vmrun -T ws start "F:\VMWare-VMs\S1.vmx"
