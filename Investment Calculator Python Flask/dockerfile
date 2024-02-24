@@ -1,0 +1,19 @@
+# Use official Python image as base
+FROM python:3
+
+# Set working directory
+WORKDIR /app
+
+# Install Flask using pip
+RUN pip3 install flask
+
+# Create a directory for the Flask app
+
+# Copy the Python script into the container
+COPY home.py /app/home.py
+COPY templates/home.html /app/templates/home.html
+
+
+
+# Set the entry point to run the Python script
+CMD ["python3", "home.py"]
