@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="refresh"> <!-- This line makes the page refresh every 10 second -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time and Timezone</title>
+    <script>
+        function updateTime() {
+            fetch('/time')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('time').innerText = 'The current time and timezone is: ' + data.time;
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(updateTime, 1000); // Update time every 1000 milliseconds (1 second)
+        });
+    </script>
+</head>
+<body>
+    <h1>Current Time and Timezone</h1>
+    <p id="time">Loading...</p>
+</body>
+</html>
