@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+</head>
+<body>
+    <h1>Investment Calculator</h1>
+    <form method="post">
+        <label for="initial_investment">Initial Investment:</label>
+        <input type="number" id="initial_investment" name="initial_investment" value="{{ initial_investment }}"><br><br>
+        <label for="monthly_investment">Monthly Investment:</label>
+        <input type="number" id="monthly_investment" name="monthly_investment" value="{{ monthly_investment }}"><br><br>
+        <label for="annual_increase">Annual Increase (%):</label>
+        <input type="number" id="annual_increase" name="annual_increase" value="{{ annual_increase }}"><br><br>
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" name="years" value="{{ years }}"><br><br>
+		<label for="inflation">Amount of Inflation (%):</label>
+		<input type="number" id="inflation" name="inflation" value="{{ inflation }}"><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if annual_increase_money is not none %}
+        <p>Annual Increase in Money: ${{ annual_increase_money }}</p>
+        <p>Amount After Inflation: ${{ amount_after_inflation }}</p>
+    {% endif %}
+</body>
+</html>
