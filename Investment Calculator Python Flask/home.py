@@ -62,7 +62,7 @@ def home():
         monthly_investment = float(request.form.get("monthly_investment", 0.0))
         annual_increase = float(request.form.get("annual_increase", 0.0))
         years = int(request.form.get("years", 0))
-        inflation = float(request.form.get("inflation", 0.0))
+        inflation = int(request.form.get("inflation", 0))
 
     # Calculate the annual increase in money and amount after inflation
     annual_increase_money, amount_after_inflation = calculate_increase(initial_investment, monthly_investment, annual_increase, years, inflation)
